@@ -1,0 +1,51 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Large model artifacts (keep git repository light)
+models/*
+!models/.gitkeep
+
+# Large datasets (users should download via data/download_instructions.md)
+data/*.csv
+data/*.tsv
+data/*.zip
+data/*.tar.gz
+data/*.parquet
+!data/synthetic_smoke_test.csv
+!data/README.md
+!data/download_instructions.md
+
+# Evaluation plots and results (except templates)
+results/*.png
+results/*.json
+results/*.csv
+!results/.gitkeep
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS / OS specific
+.DS_Store
+*.swp
+*.swo
+
+venv/
+models/
+data/*.csv
+.pytest_cache/
+__pycache__/
+static_backup/
+static_redesign/
+.DS_Store

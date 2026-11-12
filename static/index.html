@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toxic Comment Classifier</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="theme-scroll">
+
+  <!-- Slim sticky top navigation -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container">
+      <a href="#classify" class="nav-brand">Toxic Comment Classifier</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#classify" class="nav-link active" id="navClassify">Classify</a>
+          <a href="#results" class="nav-link" id="navResults">Results</a>
+        </div>
+        <button id="tryItNavBtn" class="nav-cta-btn" type="button">Try it</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE 1: CLASSIFY -->
+  <main id="classifyView" class="view active">
+
+    <!-- Hero Section with faint grid and floating design-tool elements -->
+    <section class="hero-section">
+      <div class="hero-grid-bg"></div>
+
+      <!-- Floating collaborative cursors (Interactive: clicking fills input with example) -->
+      <div class="floating-cursor cursor-en" data-lang="en" style="top: 18%; left: 14%;" title="Click to test English example">
+        <svg class="cursor-arrow" width="14" height="18" viewBox="0 0 14 18">
+          <path d="M0 0L13.5 9.5L6.5 11L4 17.5L0 0Z" fill="#34c759"/>
+        </svg>
+        <span class="cursor-pill pill-green">English</span>
+      </div>
+
+      <div class="floating-cursor cursor-es" data-lang="es" style="bottom: 24%; left: 16%;" title="Click to test Español example">
+        <svg class="cursor-arrow" width="14" height="18" viewBox="0 0 14 18">
+          <path d="M0 0L13.5 9.5L6.5 11L4 17.5L0 0Z" fill="#ff2d55"/>
+        </svg>
+        <span class="cursor-pill pill-pink">Español</span>
+      </div>
+
+      <div class="floating-cursor cursor-tr" data-lang="tr" style="top: 20%; right: 18%;" title="Click to test Türkçe example">
+        <svg class="cursor-arrow" width="14" height="18" viewBox="0 0 14 18">
+          <path d="M0 0L13.5 9.5L6.5 11L4 17.5L0 0Z" fill="#0071e3"/>
+        </svg>
+        <span class="cursor-pill pill-blue">Türkçe</span>
+      </div>
+
+      <div class="floating-cursor cursor-ru" data-lang="ru" style="bottom: 18%; left: 45%;" title="Click to test Русский example">
+        <svg class="cursor-arrow" width="14" height="18" viewBox="0 0 14 18">
+          <path d="M0 0L13.5 9.5L6.5 11L4 17.5L0 0Z" fill="#ffcc00"/>
+        </svg>
+        <span class="cursor-pill pill-yellow">Русский</span>
+      </div>
+
+      <div class="floating-cursor cursor-fr" data-lang="fr" style="top: 14%; left: 46%;" title="Click to test Français example">
+        <svg class="cursor-arrow" width="14" height="18" viewBox="0 0 14 18">
+          <path d="M0 0L13.5 9.5L6.5 11L4 17.5L0 0Z" fill="#af52de"/>
+        </svg>
+        <span class="cursor-pill pill-purple">Français</span>
+      </div>
+
+      <div class="floating-cursor cursor-pt" data-lang="pt" style="bottom: 22%; right: 14%;" title="Click to test Português example">
+        <svg class="cursor-arrow" width="14" height="18" viewBox="0 0 14 18">
+          <path d="M0 0L13.5 9.5L6.5 11L4 17.5L0 0Z" fill="#ff9500"/>
+        </svg>
+        <span class="cursor-pill pill-orange">Português</span>
+      </div>
+
+      <!-- Floating comment bubbles (Interactive: clicking fills input with comment) -->
+      <div class="floating-bubble bubble-1" style="top: 24%; right: 8%;" title="Click to analyse comment">
+        <div class="bubble-header">
+          <span class="bubble-avatar avatar-dark">E</span>
+          <span class="bubble-author">Elena</span>
+          <span class="bubble-time">just now</span>
+        </div>
+        <p class="bubble-body">Great point, thanks for sharing</p>
+      </div>
+
+      <div class="floating-bubble bubble-2" style="bottom: 26%; right: 28%;" title="Click to analyse comment">
+        <div class="bubble-header">
+          <span class="bubble-avatar avatar-blue">M</span>
+          <span class="bubble-author">Mateo</span>
+          <span class="bubble-time">just now</span>
+        </div>
+        <p class="bubble-body">Gracias por la explicación</p>
+      </div>
+
+      <div class="floating-bubble bubble-3" style="top: 30%; left: 6%;" title="Click to analyse comment">
+        <div class="bubble-header">
+          <span class="bubble-avatar avatar-teal">D</span>
+          <span class="bubble-author">Deniz</span>
+          <span class="bubble-time">just now</span>
+        </div>
+        <p class="bubble-body">Çok güzel bir yazı</p>
+      </div>
+
+      <div class="floating-bubble bubble-4" style="bottom: 28%; left: 8%;" title="Click to analyse comment">
+        <div class="bubble-header">
+          <span class="bubble-avatar avatar-purple">C</span>
+          <span class="bubble-author">Camille</span>
+          <span class="bubble-time">just now</span>
+        </div>
+        <p class="bubble-body">Merci pour cette analyse</p>
+      </div>
+
+      <!-- Floating toggle card (Interactive: switches between Both Models and XLM-RoBERTa only) -->
+      <div class="floating-toggle" id="heroModelToggle" style="top: 22%; left: 32%;" title="Toggle XLM-RoBERTa only">
+        <span class="toggle-label" id="heroToggleLabel">XLM-RoBERTa only</span>
+        <button type="button" class="toggle-switch-btn" id="heroToggleSwitch" role="switch" aria-checked="false" aria-label="Toggle XLM-RoBERTa only">
+          <span class="toggle-knob"></span>
+        </button>
+      </div>
+
+      <!-- Centerpiece: Huge word in dashed selection box with handles -->
+      <div class="hero-center-content">
+        <div class="selection-box">
+          <!-- Selection handles -->
+          <span class="handle handle-tl"></span>
+          <span class="handle handle-tm"></span>
+          <span class="handle handle-tr"></span>
+          <span class="handle handle-mr"></span>
+          <span class="handle handle-br"></span>
+          <span class="handle handle-bm"></span>
+          <span class="handle handle-bl"></span>
+          <span class="handle handle-ml"></span>
+
+          <h1 class="hero-giant-word">comments.</h1>
+        </div>
+
+        <p class="hero-tagline">Multilingual toxicity detection across 6 languages.</p>
+        <p id="heroStatsLine" class="hero-stats-subtle"></p>
+      </div>
+    </section>
+
+    <!-- Scroll into Dark: Classifier Section in a large dark panel on black -->
+    <section id="classifierSection" class="classifier-scroll-section">
+      <div class="container classifier-container">
+        <div class="classifier-dark-panel">
+          <div class="panel-header">
+            <h2 class="panel-headline">Is it toxic?</h2>
+            <p class="panel-subheadline">Evaluate comment toxicity across Baseline TF-IDF and XLM-RoBERTa.</p>
+          </div>
+
+          <div class="classify-box">
+            <div class="textarea-wrapper">
+              <textarea
+                id="classifyInput"
+                class="classify-textarea"
+                placeholder="Type or paste a comment in any language"
+              ></textarea>
+              <span id="charCount" class="char-count">0</span>
+            </div>
+
+            <div class="classify-controls">
+              <div class="example-links">
+                <a class="example-link" data-example="en">English</a>
+                <a class="example-link" data-example="es">Español</a>
+                <a class="example-link" data-example="tr">Türkçe</a>
+                <a class="example-link" data-example="polite">Polite comment</a>
+              </div>
+              <button id="analyseBtn" class="button-pill" type="button" disabled>Analyse</button>
+            </div>
+          </div>
+
+          <!-- Results appear inside the same dark panel -->
+          <div id="classifyResultsSection" class="results-inside-panel">
+            <div class="panel-divider"></div>
+            <div class="dark-grid" id="classifierDarkGrid">
+              <!-- Column 1: Baseline -->
+              <div class="dark-card" id="baselineCard">
+                <div class="dark-card-title">Baseline (TF-IDF)</div>
+                <div id="baselineProb" class="dark-card-prob">0.00</div>
+                <div class="dark-bar-track">
+                  <div id="baselineBar" class="dark-bar-fill"></div>
+                </div>
+                <div id="baselineVerdict" class="dark-card-verdict">—</div>
+              </div>
+
+              <!-- Column 2: XLM-RoBERTa -->
+              <div class="dark-card" id="transformerCard">
+                <div class="dark-card-title">XLM-RoBERTa</div>
+                <div id="transformerProb" class="dark-card-prob">0.00</div>
+                <div class="dark-bar-track">
+                  <div id="transformerBar" class="dark-bar-fill"></div>
+                </div>
+                <div id="transformerVerdict" class="dark-card-verdict">—</div>
+              </div>
+            </div>
+
+            <!-- Disagreement explanation -->
+            <p id="modelDisagreementNote" class="disagreement-note"></p>
+          </div>
+        </div>
+
+        <!-- Line below panel -->
+        <p class="panel-footer-note">Baseline trained on 223k English comments. XLM-RoBERTa fine-tuned on 80k for one epoch.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PAGE 2: RESULTS (Dark theme matching the dark section) -->
+  <main id="resultsView" class="view dark-page-view">
+    <section class="section">
+      <div class="container">
+        <!-- Headline Number -->
+        <div class="results-header">
+          <div class="headline-number-row">
+            <span id="headlineXlmF1" class="headline-number">—</span>
+            <span id="headlineBaseF1" class="headline-baseline">—</span>
+          </div>
+          <p id="headlineDescription" class="headline-desc">
+            XLM-RoBERTa toxic-class F1 on the test set, evaluated on 63,772 comments in 6 languages.
+          </p>
+        </div>
+
+        <!-- Per-Language Chart -->
+        <div class="chart-container dark-chart-panel">
+          <div class="chart-header">
+            <div class="chart-title">Per-Language F1 Score</div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <span class="legend-swatch xlm"></span>
+                <span>XLM-RoBERTa</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-swatch base"></span>
+                <span>Baseline</span>
+              </div>
+            </div>
+          </div>
+          <canvas id="languageChart"></canvas>
+        </div>
+
+        <!-- Collapsed Details Section -->
+        <div class="details-section">
+          <details class="dark-details">
+            <summary>Details</summary>
+            <div class="details-content">
+              <!-- Test Set Table -->
+              <div class="details-subtitle">Test Set Performance (63,772 Comments)</div>
+              <div class="table-wrapper">
+                <table class="metrics-table dark-table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Accuracy</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                      <th>Toxic F1</th>
+                      <th>ROC-AUC</th>
+                      <th>TN</th>
+                      <th>FP</th>
+                      <th>FN</th>
+                      <th>TP</th>
+                    </tr>
+                  </thead>
+                  <tbody id="testTableBody">
+                    <tr><td colspan="10">Loading metrics...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Validation Set Table -->
+              <div class="details-subtitle">Validation Set Performance</div>
+              <div class="table-wrapper">
+                <table class="metrics-table dark-table">
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Accuracy</th>
+                      <th>Precision</th>
+                      <th>Recall</th>
+                      <th>Toxic F1</th>
+                      <th>ROC-AUC</th>
+                      <th>TN</th>
+                      <th>FP</th>
+                      <th>FN</th>
+                      <th>TP</th>
+                    </tr>
+                  </thead>
+                  <tbody id="valTableBody">
+                    <tr><td colspan="10">Loading metrics...</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Confusion Matrices -->
+              <div class="details-subtitle">Confusion Matrices</div>
+              <div class="matrices-grid">
+                <div class="matrix-card dark-matrix-card">
+                  <div class="matrix-label">XLM-RoBERTa Test</div>
+                  <img id="xlmCmImg" class="matrix-img" src="" alt="XLM-RoBERTa Confusion Matrix" style="display:none;">
+                </div>
+                <div class="matrix-card dark-matrix-card">
+                  <div class="matrix-label">Baseline TF-IDF Test</div>
+                  <img id="baseCmImg" class="matrix-img" src="" alt="Baseline Confusion Matrix" style="display:none;">
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Batch CSV Section with Download Option -->
+        <div class="batch-section dark-batch-section">
+          <div class="batch-title">Batch Classification</div>
+          <p class="batch-desc">Upload a CSV file containing a comment_text column to analyze and export predictions.</p>
+          <form id="batchForm" class="batch-form">
+            <input type="file" id="batchFileInput" class="file-input dark-file-input" accept=".csv" required>
+            <button type="submit" id="batchSubmitBtn" class="button-pill" style="height:36px; font-size:14px; margin-top:0;">Analyse file</button>
+          </form>
+
+          <div id="batchResults" class="batch-results">
+            <div class="batch-results-header">
+              <div id="batchSummary" class="batch-summary"></div>
+              <button type="button" id="batchDownloadBtn" class="button-pill secondary-pill" style="display:none;">Download CSV</button>
+            </div>
+            <div class="table-wrapper" style="max-height: 280px; overflow-y: auto;">
+              <table class="metrics-table dark-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Comment</th>
+                    <th>Baseline</th>
+                    <th>XLM-RoBERTa</th>
+                  </tr>
+                </thead>
+                <tbody id="batchTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

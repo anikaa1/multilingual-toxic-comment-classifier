@@ -1,0 +1,2 @@
+Model,Accuracy,Precision,Recall,Toxic F1,Macro F1,ROC-AUC,TN,FP,FN,TP
+Baseline TF-IDF,0.8490,0.5948,0.0561,0.1025,0.5100,0.6824,6722,47,1161,69
