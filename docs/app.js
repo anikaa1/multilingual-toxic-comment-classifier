@@ -7,7 +7,7 @@
  * - Results page: reads local metrics JSON files from docs/results/
  */
 
-import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2';
+import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.5.1';
 
 // Configure Transformers.js for browser execution
 env.allowLocalModels = false;
@@ -190,7 +190,7 @@ async function initTransformer(onProgress) {
   transformerLoadingPromise = (async () => {
     try {
       const pipe = await pipeline('text-classification', 'anika-1/xlm-roberta-toxic-onnx', {
-        quantized: true,
+        dtype: 'q8',
         progress_callback: (info) => {
           if (info.status === 'progress' && modelDownloadText) {
             const pct = Math.round(info.progress || 0);
