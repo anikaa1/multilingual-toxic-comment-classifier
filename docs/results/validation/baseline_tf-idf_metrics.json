@@ -1,0 +1,135 @@
+{
+  "accuracy": 0.84898112264033,
+  "precision": 0.5948275862068966,
+  "recall": 0.05609756097560976,
+  "f1": 0.1025260029717682,
+  "macro_f1": 0.5100399602628429,
+  "weighted_f1": 0.7922277099109568,
+  "confusion_matrix": {
+    "tn": 6722,
+    "fp": 47,
+    "fn": 1161,
+    "tp": 69
+  },
+  "support": {
+    "non_toxic": 6769,
+    "toxic": 1230,
+    "total": 7999
+  },
+  "roc_auc": 0.6823554775657079,
+  "pr_auc": 0.3109597792399937,
+  "model_name": "Baseline TF-IDF",
+  "per_language": [
+    {
+      "lang": "tr",
+      "sample_count": 2999,
+      "toxic_count": 320,
+      "accuracy": 0.8976325441813938,
+      "precision": 0.782608695652174,
+      "recall": 0.05625,
+      "f1": 0.10495626822157435,
+      "roc_auc": 0.7124638391190742
+    },
+    {
+      "lang": "es",
+      "sample_count": 2500,
+      "toxic_count": 422,
+      "accuracy": 0.8348,
+      "precision": 0.6216216216216216,
+      "recall": 0.054502369668246446,
+      "f1": 0.10021786492374728,
+      "roc_auc": 0.672233144337656
+    },
+    {
+      "lang": "it",
+      "sample_count": 2500,
+      "toxic_count": 488,
+      "accuracy": 0.8048,
+      "precision": 0.5,
+      "recall": 0.05737704918032787,
+      "f1": 0.10294117647058823,
+      "roc_auc": 0.6598350470944823
+    }
+  ],
+  "error_cases": {
+    "false_positives": [
+      {
+        "text": "Merhaba Handsome128, Olu\u015fturmu\u015f oldu\u011funuz Fuck My Bitch adl\u0131 sayfa, Vikipedi nin h\u0131zl\u0131 silme kriterlerinden g3 uyar\u0131nca silinmeye aday g\u00f6sterilmi\u015ftir. Sayfan\u0131n silinmeye neden aday g\u00f6sterildi\u011fi ile ilgili daha fazla bilgi almak i\u00e7in, ilgili kriterde verilen a\u00e7\u0131klamalar\u0131 okuman\u0131z \u00f6nerilir. Bu uyar\u0131y\u0131 g\u00f6rd\u00fc\u011f\u00fcn\u00fczde sayfa silinmi\u015f olabilir. E\u011fer sayfan\u0131z\u0131 bulam\u0131yorsan\u0131z silme kay\u0131tlar\u0131n\u0131 kontrol edebilir ve sayfay\u0131 silen hizmetli ile irtibata ge\u00e7ebilirsiniz. \u2013 h.\u00e7a\u011fr\u0131 msj",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9999342321880806,
+        "lang": "tr"
+      },
+      {
+        "text": "Forse stupida; vedo che riesci a editare da mobile. come fai? Ho scaricato l app, ma poi?",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9866461120674351,
+        "lang": "it"
+      },
+      {
+        "text": "Ma s\u00ec, una stupidaggine D Ho semplicemente pensato che, invece di pubblicarle subito, avrei potuto aspettare il traguardo . ) \u042f\u03b1\u0438z\u03b1g",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9699028402712444,
+        "lang": "it"
+      },
+      {
+        "text": "Hola Paparazi, \u00bfpodr\u00edas cambiar la palabra en ingl\u00e9s fuck de tu firma? No se permiten palabras groseras (en cualquier idioma) en firmas. Saludos.Opss! (I m not that innocent) 18:06 2 abr 2012 (UTC)",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9375358814601272,
+        "lang": "es"
+      },
+      {
+        "text": "\u00bfPero incluso si hubo una relaci\u00f3n sexual sin penetraci\u00f3n? \u00bfPor ejemplo, caricias, masturbaci\u00f3n o fellatio?",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9294393604551171,
+        "lang": "es"
+      }
+    ],
+    "false_negatives": [
+      {
+        "text": "Aynen \u00f6yle Takabeg.Eline sa\u011fl\u0131k \u015fimdiden.Fopen in bu dedikleri de Emniyet Genel M\u00fcd\u00fcrl\u00fc\u011f\u00fcne ilave edilmeli.Bu arada M\u0131zrak a: Evet efendim. Bir \u00fcstte ki tart\u0131\u015fmalar yok say\u0131larak b\u00f6yle acayip bir teklif ortaya s\u00fcr\u00fcl\u00fcrse , kimse kusura bakmas\u0131n ama (isterse de baks\u0131n) ben tavr\u0131m\u0131 koyar\u0131m. T\u00fcrk\u00e7emizde bilmedi\u011fi konularda tabiri caizse ahkam kesene hari\u00e7ten gazel okumak diye bir deyimin s\u00f6ylendi\u011fini belirtmek isterim.Her \u015fey konu\u015fuluyor,nedenleri s\u0131ralan\u0131yor ve biri \u00e7\u0131k\u0131p,bunlar\u0131 g\u00f6rmezden gelerek sa\u00e7masapan bir teklif yap\u0131yorsa buna en ba\u015fta hari\u00e7ten gazel okumak denir.\u0130steyen kusuruma da bakabilir.Buras\u0131 Vikipedi dir.Burada abuk subuk bilgi k\u0131r\u0131nt\u0131lar\u0131yla de\u011fil,belli kriterler do\u011frultusunda \u00e7al\u0131\u015fma yap\u0131l\u0131r.Bilgi k\u0131r\u0131nt\u0131lar\u0131yla \u00e7al\u0131\u015fma yapmak isteyenler kat\u0131l\u0131mc\u0131 s\u00f6zl\u00fcklere kayabilirler.\u00d6zg\u00fcr ansiklopedi ansiklopedi olmal\u0131d\u0131r.\u00d6zg\u00fcr ba\u015fka bir X (s\u00f6zl\u00fck,forum,blog) de\u011fil.Fopen i de ayr\u0131ca kutluyorum.G\u00fczel bir ara\u015ft\u0131rma \u00f6rne\u011fi sundu\u011fu i\u00e7in.Y\u00fcrekli",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.00016825514334229482,
+        "lang": "tr"
+      },
+      {
+        "text": "interpret\u00e9 cambiar mierda por porquer\u00eda en el > en \u00e9l interpret\u00e9 otra vez \u00bfporque chat est\u00e1 en may\u00fascula? y incluso... agrego, le falta tilde en el de nuevo Mientras que... quitar eso, al menos que unas las oraciones con una coma de Billboard, dijo ... la coma est\u00e1 de sobra ser\u00eda mejor cambiar extended play por EP, para agilizar la lectura Como parte de su promoci\u00f3n, dos extended play con remezclas de \u00abXXXO\u00bb fueron publicados el 15 y el 29 de junio de 2010, titulados XXXO (The Remixes) y XXXO (The Remixes, vol. 2), respectivamente. Esta parte funcionar\u00eda mejor en la descripci\u00f3n, a la par del primer lanzamiento, ya que la secci\u00f3n habla sobre las presentaciones en directo \u00bfque es el Sound Academy? \u00abXXXO burka\u00bb, lo mismo de la intro",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.00022352563238671653,
+        "lang": "es"
+      },
+      {
+        "text": "E tragico che tu non capisca che le cose che non si sanno NON SI INVENTANO. Non si inventano trame a senso di opere perdute, non si scrivono cose a caso come qui (a parte parlare di primo secolo a.c. per Ennio, vabb\u00e8). Questa si chiama FALSIFICAZIONE, cio\u00e8 scrivere BALLE e non te la puoi cavare con un potresti farlo tu : IO NON SCRIVO BALLE, quantomeno non lo scrivo sapendo di farlo. Ripeto, \u00e8 tragico che tu non ti renda conto di questo e che continui da mesi, ARRECANDO UN DANNO ENORME all enciclopedia, ENORME. E non sto scherzando, vedi questo. Se tu fossi un utente, saresti gi\u00e0 stato infinitato. Che tu insista da anonimo mi fa pensare che o sei in malafede o davvero hai un deficit di comprensione della realt\u00e0 e vuoi fuggire dalle responsabilit\u00e0 delle tue azioni. Nel primo caso, per favore trovati altro da fare, nel secondo, se magari ti svegliassi dal sonno della ragione potresti contribuire in maniera realmente proficua, sta a te, intanto ora devo bloccarti.Shivanarayana (msg)",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.00042608559785780833,
+        "lang": "it"
+      },
+      {
+        "text": "Borja Semper, presidente provincial de un partido marginal, no me parece t\u00e1n importante como par aparecer en este apartado, pero en f\u00edn, hay que promocionar a quienes conviene",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.00048151996994735683,
+        "lang": "es"
+      },
+      {
+        "text": "\u00e8 cosi noioso tutto cio .... ascolta, io sono in fase di cazzeggio, tu sei li a fare il paladino della legge e dell ordine. Guarda, devi solo chiamare il vecchio bacucco in sveglia notturna... spero che stia bene, si intende, non lo sento da un po non venendo a rompervi le balle in irc da tempo (ho problemi personali, altrimenti verrei, non sentiatevi trascurati...). Ascolta, fai un bel blocco di ip che fai prima. Ah, becca il range giusto... A me Dedda sta anche simpatica, ma certe voci le rendete anche ridicole.. Comunque contenti voi.. La qualita sta terribilmente dedicadendo, ieri mi leggevo qualcosa sulla seconda guerra mondiale, e voci relative ad armi etc. e accidenti... ormai bisogna solo vedere wiki en... peccato, e stata una bella idea.. 151.68.123. (ps: la firma \u00e8 perche la sbatti subito a bloccare il range giusto).",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.0005537745363089375,
+        "lang": "it"
+      }
+    ]
+  },
+  "plots": {
+    "confusion_matrix": "/Users/anikakhajuria/Downloads/Toxic comment classifier/results/baseline_tf-idf_confusion_matrix.png",
+    "roc_curve": "/Users/anikakhajuria/Downloads/Toxic comment classifier/results/baseline_tf-idf_roc_curve.png",
+    "pr_curve": "/Users/anikakhajuria/Downloads/Toxic comment classifier/results/baseline_tf-idf_pr_curve.png"
+  }
+}

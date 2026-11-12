@@ -1,0 +1,31 @@
+id,comment_text,toxic,lang,toxicity_prob,predicted_label,verdict
+1,This article provides very thoughtful and well-researched insights. Thank you!,0,en,0.26866426617384803,0,Non-toxic
+2,I respectfully disagree with the author's conclusions on economic policy.,0,en,0.2513963313065374,0,Non-toxic
+3,"Great work on organizing the event, everything ran seamlessly.",0,en,0.25713908010296116,0,Non-toxic
+4,Could you please provide the source citations for the third paragraph?,0,en,0.43126552867176166,0,Non-toxic
+5,The discussion was very constructive and everyone shared valuable perspectives.,0,en,0.3981989165274298,0,Non-toxic
+6,"You are a complete idiot and should delete your account immediately, garbage!",1,en,0.7344556001891218,1,Toxic
+7,Shut your mouth nobody asked for your stupid opinion you loser.,1,en,0.5582149596946847,1,Toxic
+8,I hate you and hope terrible things happen to you and your family.,1,en,0.5393034547904993,1,Toxic
+9,This user is a disgusting fraud who knows nothing about science.,1,en,0.7283374775901066,1,Toxic
+10,"Get out of here, your comments are total trash and you are pathetic.",1,en,0.5690584778077739,1,Toxic
+11,"Este artículo es muy informativo y me ayudó mucho con mi tarea, gracias.",0,es,0.2622139697701415,0,Non-toxic
+12,No comparto tu opinión pero aprecio la explicación detallada.,0,es,0.5379836597047482,1,Toxic
+13,"Eres un imbécil total y no sabes nada de este tema, cállate la boca.",1,es,0.5642781206657931,1,Toxic
+14,"Qué estupidez de comentario, das asco como persona.",1,es,0.7397168534232772,1,Toxic
+15,Merci pour cette analyse très claire et constructive sur le sujet.,0,fr,0.43168193550352474,0,Non-toxic
+16,Je ne suis pas d'accord avec cette approche mais le débat est intéressant.,0,fr,0.26498121549019377,0,Non-toxic
+17,"Tu es vraiment un pauvre idiot bon à rien, dégage d'ici.",1,fr,0.5816828651651865,1,Toxic
+18,"Ferme ta gueule espèce d'imbécile, tes propos sont répugnants.",1,fr,0.7357493933563709,1,Toxic
+19,Questo articolo è scritto molto bene e spiega i concetti chiaramente.,0,it,0.26657353080588975,0,Non-toxic
+20,Non sono d'accordo con la tua tesi ma rispetto il tuo punto di vista.,0,it,0.505926686450926,1,Toxic
+21,"Sei un perfetto idiota senza cervello, vergognati e vattene via.",1,it,0.7426093049374021,1,Toxic
+22,"Fai schifo, non capisci niente e dovresti solo tacere.",1,it,0.7369394405564134,1,Toxic
+23,"Bu makale çok bilgilendirici olmuş, emeğinize sağlık teşekkür ederim.",0,tr,0.2669370516312354,0,Non-toxic
+24,Farklı düşünüyoruz ama görüşlerinizi saygıyla karşılıyorum.,0,tr,0.5077884002780115,1,Toxic
+25,"Sen tam bir aptalsın, hiçbir şeyden anlamıyorsun defol git buradan.",1,tr,0.7428382529842,1,Toxic
+26,"Geri zekalı rezil herif, senin gibi insanlar yüzünden bu haldeyiz.",1,tr,0.7370995341092892,1,Toxic
+27,Der Artikel fasst die zentralen Argumente sehr objektiv und sachlich zusammen.,0,de,0.2601655771219207,0,Non-toxic
+28,"Ich teile diese Ansicht zwar nicht, aber die Ausführung ist verständlich.",0,de,0.2590025263883399,0,Non-toxic
+29,"Du bist so ein verdammter Idiot, halt einfach deine dumme Fresse.",1,de,0.7442395917592709,1,Toxic
+30,"Verschwinde du dreckiger Versager, niemand will deinen Müll hören.",1,de,0.5521306242693927,1,Toxic

@@ -1,0 +1,165 @@
+{
+  "accuracy": 0.8433952204729348,
+  "precision": 0.6860857818304626,
+  "recall": 0.5645015630427231,
+  "f1": 0.6193833606463661,
+  "macro_f1": 0.7603999375661622,
+  "weighted_f1": 0.8377542920447469,
+  "confusion_matrix": {
+    "tn": 45659,
+    "fp": 3718,
+    "fn": 6269,
+    "tp": 8126
+  },
+  "support": {
+    "non_toxic": 49377,
+    "toxic": 14395,
+    "total": 63772
+  },
+  "roc_auc": 0.9011687853650581,
+  "pr_auc": 0.7160491653567074,
+  "model_name": "XLM-RoBERTa",
+  "per_language": [
+    {
+      "lang": "tr",
+      "sample_count": 13982,
+      "toxic_count": 1687,
+      "accuracy": 0.9143899299098841,
+      "precision": 0.8054862842892768,
+      "recall": 0.38292827504445764,
+      "f1": 0.5190839694656488,
+      "roc_auc": 0.962207783222803
+    },
+    {
+      "lang": "pt",
+      "sample_count": 11008,
+      "toxic_count": 1747,
+      "accuracy": 0.8597383720930233,
+      "precision": 0.5488215488215489,
+      "recall": 0.6531196336576989,
+      "f1": 0.5964453737584945,
+      "roc_auc": 0.895576027814384
+    },
+    {
+      "lang": "ru",
+      "sample_count": 10942,
+      "toxic_count": 2632,
+      "accuracy": 0.8260829830012795,
+      "precision": 0.6651563207974626,
+      "recall": 0.5577507598784195,
+      "f1": 0.6067369291175863,
+      "roc_auc": 0.8845105047933606
+    },
+    {
+      "lang": "fr",
+      "sample_count": 10910,
+      "toxic_count": 3335,
+      "accuracy": 0.7954170485792851,
+      "precision": 0.7155138726064869,
+      "recall": 0.5490254872563718,
+      "f1": 0.6213098065829658,
+      "roc_auc": 0.8703225021152791
+    },
+    {
+      "lang": "it",
+      "sample_count": 8494,
+      "toxic_count": 1637,
+      "accuracy": 0.8325877089710384,
+      "precision": 0.5661538461538461,
+      "recall": 0.5620036652412951,
+      "f1": 0.5640711220110362,
+      "roc_auc": 0.8667137524232935
+    },
+    {
+      "lang": "es",
+      "sample_count": 8436,
+      "toxic_count": 3357,
+      "accuracy": 0.7997866287339972,
+      "precision": 0.8242612752721618,
+      "recall": 0.6315162347333929,
+      "f1": 0.7151290268173385,
+      "roc_auc": 0.9047931570081599
+    }
+  ],
+  "error_cases": {
+    "false_positives": [
+      {
+        "text": "Salebot a annul\u00e9 votre modification sur My name is Bsadowski1 and I like to dip 8 inch nigger cocks in aids infected shit and then suck it until it cums in my ass and then I stuff a dead kitten up it!",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9985798597335815,
+        "lang": "fr"
+      },
+      {
+        "text": "nota 8 a fine pagina: credo che una traduzione migliore per fucker sia stronzo , mentre idiota credo sia sucker. DN",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9974573254585266,
+        "lang": "it"
+      },
+      {
+        "text": "Spiegami il motivo del mio vandalismo sulla pagina di I\u00f1igo Mart\u00ednez? MIRKO.G.93 (Are You Fucking Kidding Me?)",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9973477125167847,
+        "lang": "it"
+      },
+      {
+        "text": "Domanda stupida, stupida. Come faccio a riconoscere se un IP \u00e8 un proxy aperto? Gac",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9953778982162476,
+        "lang": "it"
+      },
+      {
+        "text": "supprimer . Ce langage n est qu un d\u00e9guisement superficiel de brainfuck, son int\u00e9r\u00eat para\u00eet plus que limit\u00e9, m\u00eame en tant que langage exotique. FvdP (d)",
+        "true_label": 0,
+        "pred_label": 1,
+        "prob_toxic": 0.9947224855422974,
+        "lang": "fr"
+      }
+    ],
+    "false_negatives": [
+      {
+        "text": "Pas de sources secondaire centr\u00e9e et significative fournie pour conclure \u00e0 la satisfaction des crit\u00e8res de notori\u00e9t\u00e9. A la rigueur, une fusion avec Baise-moi est peut-\u00eatre envisageable. Vincent P. (discuter)",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.0009975082939490676,
+        "lang": "fr"
+      },
+      {
+        "text": "Ho immaginato che si trattava solo di quello, puoi recuperarla non modificata senza troppi problemi? (lo s\u00f2 che \u00e8 abbastanza una cazzata come modifica, ma preferirei applicare il regolamento).",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.0009993251878768206,
+        "lang": "it"
+      },
+      {
+        "text": "- merci de ne pas terminer un nouvel article par Merde , faudra t il un nouveau blocage ? ? ? ? Taguelmoust [[[Discussion Utilisateur:Taguelmoust|prendre langue]]]",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.001045200158841908,
+        "lang": "fr"
+      },
+      {
+        "text": "Ainda estou trabalhando neste artigo, ent\u00e3o n\u00e3o fa\u00e7am nenhuma cagada. Se querem ajudar, usem os seguintes links como refer\u00eancias: Booyakasha (discuss\u00e3o)",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.0010621570982038975,
+        "lang": "pt"
+      },
+      {
+        "text": "j avais creus\u00e9 un peu cet argument derri\u00e8re mon avis, je t y renvoie donc. Pour gabacho et autres exemples, il ne sont effectivement pas forc\u00e9ment bien choisis, il faut chercher d autres exemple (note d ailleurs que j ai retir\u00e9 Cr\u00e8ve salope, qui \u00e9tait mon premier exemple de la cat\u00e9gorie) Ofol ( .",
+        "true_label": 1,
+        "pred_label": 0,
+        "prob_toxic": 0.0011160769499838352,
+        "lang": "fr"
+      }
+    ]
+  },
+  "plots": {
+    "confusion_matrix": "/Users/anikakhajuria/Downloads/Toxic comment classifier/results/xlm-roberta_confusion_matrix.png",
+    "roc_curve": "/Users/anikakhajuria/Downloads/Toxic comment classifier/results/xlm-roberta_roc_curve.png",
+    "pr_curve": "/Users/anikakhajuria/Downloads/Toxic comment classifier/results/xlm-roberta_pr_curve.png"
+  }
+}
